@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Common.Core": "1.0.0-*",
+    "NETStandard.Library": "1.6.0",
+    "FluentValidation": "6.4.0-beta3",
+    "System.Data.SqlClient": "4.1.0",
+    "Infrastructure.Models": "1.0.0-*",
+    "AutoMapper":  "5.1.1"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

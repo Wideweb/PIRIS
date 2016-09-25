@@ -1,0 +1,9 @@
+#:C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Common.Core\Common.Core.xproj
+#:C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Core\Identity.Core.xproj
+C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Core\Identity.Core.xproj|C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Common.Core\Common.Core.xproj
+C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Core\Identity.Core.xproj|C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Infrastructure.Models\Infrastructure.Models.xproj
+#:C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Api\Identity.Api.xproj
+C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Api\Identity.Api.xproj|C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Common.Core\Common.Core.xproj
+C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Api\Identity.Api.xproj|C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Core\Identity.Core.xproj
+C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Core\Identity.Core.xproj|C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Common.Core\Common.Core.xproj
+C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Identity.Core\Identity.Core.xproj|C:\Users\alcke\Documents\Visual Studio 2015\Projects\Piris\Infrastructure.Models\Infrastructure.Models.xproj
