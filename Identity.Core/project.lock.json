@@ -145,13 +145,13 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Authorization.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Cors/1.0.0": {
+      "Microsoft.AspNetCore.Cors/1.0.0-rc2-final": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Options": "1.0.0"
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Options": "1.0.0-rc2-final"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.Cors.dll": {}
@@ -3092,17 +3092,40 @@
           "AutoMapper": "5.1.1",
           "Autofac": "4.0.0-rc3-316",
           "Autofac.Extensions.DependencyInjection": "4.0.0-rc3-309",
+          "EternityFramework": "1.0.0",
           "FluentValidation": "6.4.0-beta3",
+          "Microsoft.AspNetCore.Cors": "1.0.0-rc2-final",
           "Microsoft.AspNetCore.Mvc": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "NETStandard.Library": "1.6.0",
-          "System.Data.SqlClient": "4.1.0"
+          "Newtonsoft.Json": "9.0.1",
+          "System.Data.SqlClient": "4.1.0",
+          "System.Linq.Queryable": "4.0.1"
         },
         "compile": {
           "netstandard1.6/Common.Core.dll": {}
         },
         "runtime": {
           "netstandard1.6/Common.Core.dll": {}
+        }
+      },
+      "EternityFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyModel": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "System.Data.SqlClient": "4.1.0",
+          "System.Linq.Queryable": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "compile": {
+          "netstandard1.6/EternityFramework.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/EternityFramework.dll": {}
         }
       },
       "Infrastructure.Models/1.0.0": {
@@ -3286,12 +3309,12 @@
         "lib/netstandard1.3/Microsoft.AspNetCore.Authorization.xml"
       ]
     },
-    "Microsoft.AspNetCore.Cors/1.0.0": {
-      "sha512": "fC8lWOU3+ltkbgQyD1P7eRQ66fGfZkPNU2UkwOI8tyF5FUsd8nRTfzvsO4mSyQfgmgfk2Hc8TGzx/okevZwXkg==",
+    "Microsoft.AspNetCore.Cors/1.0.0-rc2-final": {
+      "sha512": "vP02NQX1ryMEqnbdE7ER4TdoY3f5esjo72WIFoKXSKpATuRcwYiJp1WmVxJk+llMY7MzrkhIRQjCFTu2pNqwCQ==",
       "type": "package",
-      "path": "Microsoft.AspNetCore.Cors/1.0.0",
+      "path": "Microsoft.AspNetCore.Cors/1.0.0-rc2-final",
       "files": [
-        "Microsoft.AspNetCore.Cors.1.0.0.nupkg.sha512",
+        "Microsoft.AspNetCore.Cors.1.0.0-rc2-final.nupkg.sha512",
         "Microsoft.AspNetCore.Cors.nuspec",
         "lib/net451/Microsoft.AspNetCore.Cors.dll",
         "lib/net451/Microsoft.AspNetCore.Cors.xml",
@@ -3700,7 +3723,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Common/1.3.0": {
-      "sha512": "zYo3yXN5I/IeRpWg2gXli5D4R49PlkzDuJd00J9sY5FpfRrgj2gJwdTjdihbUg+fJKt0TTXwiIU7U+61PbdN6A==",
+      "sha512": "V09G35cs0CT1C4Dr1IEOh8IGfnWALEVAOO5JXsqagxXwmYR012TlorQ+vx2eXxfZRKs3gAS/r92gN9kRBLba5A==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.Common/1.3.0",
       "files": [
@@ -3716,7 +3739,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.CSharp/1.3.0": {
-      "sha512": "pWFU4tQagKiLtC0xIcadBsuiok9JBoiJ/x0UUMOEEBgKM6/f0RCVv1PowuZgPNGeA40h+BqPq7BL2IV39FgtPw==",
+      "sha512": "BgWDIAbSFsHuGeLSn/rljLi51nXqkSo4DZ0qEIrHyPVasrhxEVq7aV8KKZ3HEfSFB+GIhBmOogE+mlOLYg19eg==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.CSharp/1.3.0",
       "files": [
@@ -4237,7 +4260,7 @@
       ]
     },
     "runtime.native.System.Net.Security/4.0.1": {
-      "sha512": "zwBHndw5b6FhCAt68XrjQcW3uOIGvquX9BYSyn+UrMz6wplML3fg0DnfgZOYQX8ejdt//r1KDGNQ8bUa9Wx8tw==",
+      "sha512": "Az6Ff6rZFb8nYGAaejFR6jr8ktt9f3e1Q/yKdw0pwHNTLaO/1eCAC9vzBoR9YAb0QeZD6fZXl1A9tRB5stpzXA==",
       "type": "package",
       "path": "runtime.native.System.Net.Security/4.0.1",
       "files": [
@@ -8535,6 +8558,11 @@
       "path": "../Common.Core/project.json",
       "msbuildProject": "../Common.Core/Common.Core.xproj"
     },
+    "EternityFramework/1.0.0": {
+      "type": "project",
+      "path": "../../EternityFramework/project.json",
+      "msbuildProject": "../../EternityFramework/EternityFramework.xproj"
+    },
     "Infrastructure.Models/1.0.0": {
       "type": "project",
       "path": "../Infrastructure.Models/project.json",
@@ -8545,6 +8573,7 @@
     "": [
       "AutoMapper >= 5.1.1",
       "Common.Core >= 1.0.0-*",
+      "EternityFramework >= 1.0.0-*",
       "FluentValidation >= 6.4.0-beta3",
       "Infrastructure.Models >= 1.0.0-*",
       "NETStandard.Library >= 1.6.0",

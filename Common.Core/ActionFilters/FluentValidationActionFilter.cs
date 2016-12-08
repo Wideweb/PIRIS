@@ -1,30 +1,41 @@
-﻿using Common.Core.Services;
+﻿using Common.Core.Extensions;
+using Common.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Linq;
+using System;
+using System.Threading.Tasks;
 
 namespace Common.Core.ActionFilters
 {
     public class FluentValidationActionFilter : ActionFilterAttribute
     {
-        public override void OnActionExecuting(ActionExecutingContext filterContext)
-        {
-            var validationErrors = filterContext.ActionArguments.Values
-                .Select(it => new { Argument = it, Validator = FluentValidationHelper.GetModelValidator(it) })
-                .Where(it => it.Validator != null)
-                .SelectMany(it => it.Validator.Validate(it.Argument).Errors);
+        private readonly IServiceProvider serviceProvider;
 
-            if (!validationErrors.Any())
+        public FluentValidationActionFilter(IServiceProvider serviceProvider)
+        {
+            this.serviceProvider = serviceProvider;
+        }
+
+        public override async Task OnActionExecutionAsync(ActionExecutingContext context,
+            ActionExecutionDelegate next)
+        {
+            foreach (var argument in context.ActionArguments)
             {
+                var validator = FluentValidationHelper.GetModelValidator(argument.Value, serviceProvider);
+                if(validator != null)
+                {
+                    var validationResult = await validator.ValidateAsync(argument.Value);
+                    context.ModelState.AddValidationFailures(validationResult.Errors);
+                }
+            }
+
+            if (!context.ModelState.IsValid)
+            {
+                context.Result = new BadRequestObjectResult(context.ModelState);
                 return;
             }
-            
-            foreach(var error in validationErrors)
-            {
-                filterContext.ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-            }
-            
-            filterContext.Result = new BadRequestObjectResult(filterContext.ModelState);
+
+            await next();
         }
     }
 }

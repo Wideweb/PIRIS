@@ -7,10 +7,10 @@ namespace Common.Core.Services
 {
     public static class FluentValidationHelper
     {
-        public static IValidator GetModelValidator<T>(T modelObject)
+        public static IValidator GetModelValidator<T>(T modelObject, IServiceProvider serviceProvider)
         {
             var validator = modelObject.GetType().GetTypeInfo().GetCustomAttribute<ValidatorAttribute>();
-            return validator == null ? null : (IValidator)Activator.CreateInstance(validator.ValidatorType);
+            return validator == null ? null : (IValidator)serviceProvider.GetService(validator.ValidatorType);
         }
     }
 }

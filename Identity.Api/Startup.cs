@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Common.Core.Configurations;
 using Identity.Core.Options;
+using Identity.Core.Domain;
 
 namespace Identity.Api
 {
@@ -36,6 +37,9 @@ namespace Identity.Api
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.Configure<IdentityOptions>(Configuration.GetSection("IdentityOptions"));
+            services.AddScoped(t => {
+                return new IdentityContext(Configuration.GetSection("DbQueryOptions")["ConnectionString"]);
+            });
             services.AddCommonTools(Configuration);
             
             // Create the IServiceProvider based on the container.
@@ -49,10 +53,9 @@ namespace Identity.Api
             loggerFactory.AddDebug();
 
             app.UseApplicationInsightsRequestTelemetry();
-
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseMvc();
+            app.UseCommonTools();
         }
     }
 }

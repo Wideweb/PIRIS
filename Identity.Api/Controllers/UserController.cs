@@ -26,11 +26,5 @@ namespace Identity.Api.Controllers
         {
             return Ok(await userService.SaveUser(userModel));
         }
-
-        // DELETE api/values/5
-        [HttpDelete]
-        public void Delete(int id)
-        {
-        }
     }
 }

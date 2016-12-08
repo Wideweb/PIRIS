@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
@@ -20,7 +20,8 @@
     "Common.Core": "1.0.0-*",
     "Identity.Core": "1.0.0-*",
     "FluentValidation": "6.4.0-beta3",
-    "AutoMapper": "5.1.1"
+    "AutoMapper": "5.1.1",
+    "EternityFramework": "1.0.0-*"
   },
 
   "tools": {

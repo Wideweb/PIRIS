@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Autofac;
 using Common.Core.Cqrs;
-using Common.Core.DataAccess;
 using Common.Core.Services;
+using Autofac.Features.ResolveAnything;
 
 namespace Common.Core.Configurations
 {
@@ -24,14 +24,14 @@ namespace Common.Core.Configurations
 
             builder.RegisterType<CommandDispatcher>().As<ICommandDispatcher>();
             builder.RegisterType<QueryDispatcher>().As<IQueryDispatcher>();
-
-            builder.RegisterType<DbQuery>().As<IDbQuery>().InstancePerLifetimeScope();
-
+            
             builder.RegisterAssemblyTypes(assemblies)
                 .Where(t => t.Name.EndsWith("Resolver") ||
                             t.Name.EndsWith("Selector") ||
                             t.Name.EndsWith("Service"))
                 .AsImplementedInterfaces();
+
+            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
         }
     }
 }

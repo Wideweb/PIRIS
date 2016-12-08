@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
@@ -9,7 +9,11 @@
     "FluentValidation": "6.4.0-beta3",
     "System.Data.SqlClient": "4.1.0",
     "AutoMapper": "5.1.1",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0"
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+    "EternityFramework": "1.0.0-*",
+    "Newtonsoft.Json": "9.0.1",
+    "System.Linq.Queryable": "4.0.1",
+    "Microsoft.AspNetCore.Cors": "1.0.0-rc2-final"
   },
 
   "frameworks": {

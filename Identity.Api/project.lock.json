@@ -3758,11 +3758,15 @@
           "AutoMapper": "5.1.1",
           "Autofac": "4.0.0-rc3-316",
           "Autofac.Extensions.DependencyInjection": "4.0.0-rc3-309",
+          "EternityFramework": "1.0.0",
           "FluentValidation": "6.4.0-beta3",
+          "Microsoft.AspNetCore.Cors": "1.0.0-rc2-final",
           "Microsoft.AspNetCore.Mvc": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "NETStandard.Library": "1.6.0",
-          "System.Data.SqlClient": "4.1.0"
+          "Newtonsoft.Json": "9.0.1",
+          "System.Data.SqlClient": "4.1.0",
+          "System.Linq.Queryable": "4.0.1"
         },
         "compile": {
           "netstandard1.6/Common.Core.dll": {}
@@ -3771,12 +3775,32 @@
           "netstandard1.6/Common.Core.dll": {}
         }
       },
+      "EternityFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyModel": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "System.Data.SqlClient": "4.1.0",
+          "System.Linq.Queryable": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "compile": {
+          "netstandard1.6/EternityFramework.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/EternityFramework.dll": {}
+        }
+      },
       "Identity.Core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "AutoMapper": "5.1.1",
           "Common.Core": "1.0.0",
+          "EternityFramework": "1.0.0",
           "FluentValidation": "6.4.0-beta3",
           "Infrastructure.Models": "1.0.0",
           "NETStandard.Library": "1.6.0",
@@ -3945,7 +3969,7 @@
       ]
     },
     "Libuv/1.9.0": {
-      "sha512": "z88vrEw148ooDszGje40Fn9BeRwsQCM/j6n3HBzavKSV0Si0AAdWbhFb8OAknoTzA608aXcibJJVcQj5486/Rw==",
+      "sha512": "9Q7AaqtQhS8JDSIvRBt6ODSLWDBI4c8YxNxyCQemWebBFUtBbc6M5Vi5Gz1ZyIUlTW3rZK9bIr5gnVyv0z7a2Q==",
       "type": "package",
       "path": "Libuv/1.9.0",
       "files": [
@@ -4485,7 +4509,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Common/1.3.0": {
-      "sha512": "zYo3yXN5I/IeRpWg2gXli5D4R49PlkzDuJd00J9sY5FpfRrgj2gJwdTjdihbUg+fJKt0TTXwiIU7U+61PbdN6A==",
+      "sha512": "V09G35cs0CT1C4Dr1IEOh8IGfnWALEVAOO5JXsqagxXwmYR012TlorQ+vx2eXxfZRKs3gAS/r92gN9kRBLba5A==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.Common/1.3.0",
       "files": [
@@ -4501,7 +4525,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.CSharp/1.3.0": {
-      "sha512": "pWFU4tQagKiLtC0xIcadBsuiok9JBoiJ/x0UUMOEEBgKM6/f0RCVv1PowuZgPNGeA40h+BqPq7BL2IV39FgtPw==",
+      "sha512": "BgWDIAbSFsHuGeLSn/rljLi51nXqkSo4DZ0qEIrHyPVasrhxEVq7aV8KKZ3HEfSFB+GIhBmOogE+mlOLYg19eg==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.CSharp/1.3.0",
       "files": [
@@ -4517,7 +4541,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.VisualBasic/1.3.0": {
-      "sha512": "M2pBLXaPZF/9anC6FPqIguf9SOY/TBjFLcb63lcnwDRWxhh9v2k9+qu+TptOA/7ThFaOTObmXWpMU+hs/7PJ4w==",
+      "sha512": "Sf3k8PkTkWqBmXnnblJbvb7ewO6mJzX6WO2t7m04BmOY5qBq6yhhyXnn/BMM+QCec3Arw3X35Zd8f9eBql0qgg==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.VisualBasic/1.3.0",
       "files": [
@@ -4965,7 +4989,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHost/1.0.1": {
-      "sha512": "LbkbC34hzsjoDiSPCcuItVCdavIqtaJhYrpKPawD/WjFIigTNYdZzeKKw4Zzt8bVSBUvyn+fEAwaywRva7MujQ==",
+      "sha512": "uaMgykq6AckP3hZW4dsD6zjocxyXPz0tcTl8OX7mlSUWsyFXdtf45sjdwI0JIHxt3gnI6GihAlOAwYK8HE4niQ==",
       "type": "package",
       "path": "Microsoft.NETCore.DotNetHost/1.0.1",
       "files": [
@@ -4977,7 +5001,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/1.0.1": {
-      "sha512": "M+wFPJGyAL5gLI1Kz3IkPaIpQdDAOCRNrL5l3pociUDPvQXUgKIH+XbBaPLvbeHpV9L02VTW5YRtNZe3COgDAw==",
+      "sha512": "d8AQ+ZVj2iK9sbgl3IEsshCSaumhM1PNTPHxldZAQLOoI1BKF8QZ1zPCNqwBGisPiWOE3f/1SHDbQi1BTRBxuA==",
       "type": "package",
       "path": "Microsoft.NETCore.DotNetHostPolicy/1.0.1",
       "files": [
@@ -4989,7 +5013,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/1.0.1": {
-      "sha512": "wgABWAvek4rR2MQnZzW6N+cf09txNnJgPZE729KsE5bPKzGuhcaMPctyl9dpHNHJ9VIXFTpCC8562wTNgOizjw==",
+      "sha512": "GEXgpAHB9E0OhfcmNJ664Xcd2bJkz2qkGIAFmCgEI5ANlQy4qEEmBVfUqA+Z9HB85ZwWxZc1eIJ6fxdxcjrctg==",
       "type": "package",
       "path": "Microsoft.NETCore.DotNetHostResolver/1.0.1",
       "files": [
@@ -5252,7 +5276,7 @@
       ]
     },
     "runtime.native.System.Net.Security/4.0.1": {
-      "sha512": "zwBHndw5b6FhCAt68XrjQcW3uOIGvquX9BYSyn+UrMz6wplML3fg0DnfgZOYQX8ejdt//r1KDGNQ8bUa9Wx8tw==",
+      "sha512": "Az6Ff6rZFb8nYGAaejFR6jr8ktt9f3e1Q/yKdw0pwHNTLaO/1eCAC9vzBoR9YAb0QeZD6fZXl1A9tRB5stpzXA==",
       "type": "package",
       "path": "runtime.native.System.Net.Security/4.0.1",
       "files": [
@@ -9939,6 +9963,11 @@
       "path": "../Common.Core/project.json",
       "msbuildProject": "../Common.Core/Common.Core.xproj"
     },
+    "EternityFramework/1.0.0": {
+      "type": "project",
+      "path": "../../EternityFramework/project.json",
+      "msbuildProject": "../../EternityFramework/EternityFramework.xproj"
+    },
     "Identity.Core/1.0.0": {
       "type": "project",
       "path": "../Identity.Core/project.json",
@@ -9956,6 +9985,7 @@
       "Autofac >= 4.0.0-rc3-316",
       "Autofac.Extensions.DependencyInjection >= 4.0.0-rc3-309",
       "Common.Core >= 1.0.0-*",
+      "EternityFramework >= 1.0.0-*",
       "FluentValidation >= 6.4.0-beta3",
       "Identity.Core >= 1.0.0-*",
       "Microsoft.ApplicationInsights.AspNetCore >= 1.0.0",

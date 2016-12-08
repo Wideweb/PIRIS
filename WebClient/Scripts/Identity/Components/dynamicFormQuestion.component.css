@@ -1,0 +1,15 @@
+﻿form.submitted select.ng-valid, form.submitted input.ng-valid  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+form.submitted select.ng-invalid, form.submitted input.ng-invalid  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+form.not-submitted .error-message{
+  display: none;
+}
+
+form .error-message{
+  color: #a94442;
+}
