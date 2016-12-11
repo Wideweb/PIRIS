@@ -1,4 +1,5 @@
-﻿using Common.Core.Models;
+﻿using Common.Core.Constants;
+using Common.Core.Models;
 using FluentValidation.Attributes;
 using Identity.Core.Features.Questionnaire.Attributes;
 using Identity.Core.Features.User.ModelValidators;
@@ -24,7 +25,7 @@ namespace Identity.Core.Features.User.Models
         [TextBoxQuestion(Label = "Passport Seria", Required = true)]
         public string PassportSeria { get; set; }
 
-        [TextBoxQuestion(Label = "Passport No", Required = true)]
+        [TextBoxQuestion(Label = "Passport No", Required = true, Pattern = ValidationPatterns.PassportNoPattern)]
         public string PassportNo { get; set; }
 
         [TextBoxQuestion(Label = "Issued By", Required = true)]
@@ -73,7 +74,7 @@ namespace Identity.Core.Features.User.Models
         public long? DisabilityId { get; set; }
 
         [CheckBoxQuestion(Label = "Is Pensioner", DefaultValue = false)]
-        public bool? IsPensioner { get; set; }
+        public bool IsPensioner { get; set; }
 
         [TextBoxQuestion(Label = "Monthly Income", Required = true, Pattern = @"^\d+(\.\d+)?$")]
         public decimal? MonthlyIncome { get; set; }

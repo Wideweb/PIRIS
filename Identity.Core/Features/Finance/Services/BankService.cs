@@ -210,10 +210,11 @@ namespace Identity.Core.Features.Finance.Services
         public async Task<List<MonthlyIncomeModel>> GetAnnualReportData()
         {
             var bankInsuranceFundAccount = await GetBankInsuranceFundAccount();
+            var bankDevelopmentFundAccount = await GetBankDevelopmentFundAccount();
             var bankDate = await GetBankDate();
             var startDate = bankDate.AddYears(-1);
             var transactions = context.Transactions
-                .Where(it => it.AccountId == bankInsuranceFundAccount.Id)
+                .Where(it => it.AccountId == bankInsuranceFundAccount.Id || it.AccountId == bankDevelopmentFundAccount.Id)
                 .ToList()
                 .Where(it => it.Time >= startDate)
                 .ToList();
@@ -230,11 +231,11 @@ namespace Identity.Core.Features.Finance.Services
                 {
                     MonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(monthIndex),
                     Credits = monthTransactions
-                        .Where(t => t.TransactionTypeId == (long)TransactionTypeEnum.CreditPercent)
+                        .Where(t => t.TransactionTypeId == (long)TransactionTypeEnum.CreditPercent && t.AccountId == bankInsuranceFundAccount.Id)
                         .Sum(t => t.Amount),
 
                     Deposits = monthTransactions
-                        .Where(t => t.TransactionTypeId == (long)TransactionTypeEnum.DepositPercent)
+                        .Where(t => t.TransactionTypeId == (long)TransactionTypeEnum.DepositPercent && t.AccountId == bankDevelopmentFundAccount.Id)
                         .Sum(t => t.Amount)
                 });
             }
